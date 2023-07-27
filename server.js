@@ -184,7 +184,7 @@ updateEmployeeRole = () => {
     ])
     .then(answers => {
       const { employeeId, newRoleId } = answers
-      const query = `UPDATE employee SET role_id = '${newRoleId}' WHERE employee_id = '${employeeId}'`
+      const query = `UPDATE employee SET role_id = '${newRoleId}' WHERE id = '${employeeId}'`
       db.query(query, (err, result) => {
         if (err) throw err
         console.log('Employee role updated successfully!\n')
